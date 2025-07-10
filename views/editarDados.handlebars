@@ -1,0 +1,18 @@
+<div class="login">
+    <form action="/edit/user" method="post">
+        <div class="mb-3">
+            <h1>Editar</h1>
+            <input type="hidden" name="id" value="{{user.id}}">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome" value="{{user.nome}}" required>
+            <label for="nomeusuario" class="form-label">Nome de usuário</label>
+            <input type="text" class="form-control" name="nomeusuario" value="{{user.nomeusuario}}" required>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" value="{{user.email}}" required>
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" name="senha" required>
+        </div>
+        <input type="submit" value="Registrar" class="btn btn-primary">
+        <a href="/login">voltar</a>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="login">
+    <form action="/registrar" method="post">
+        <div class="mb-3">
+            <h1>Registre-se</h1>
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome" pattern="[A-Za-zÀ-ÿ\s]+"
+                title="Digite apenas letras e espaços" required>
+            <label for="nomeusuario" class="form-label">Nome de usuário</label>
+            <input type="text" class="form-control" name="nomeusuario" pattern="[A-Za-zÀ-ÿ0-9\s]+"
+                title="Digite apenas letras e espaços" required>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email"required>
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" name="senha" required>
+        </div>
+        <input type="submit" value="Registrar" class="btn btn-primary">
+        <a href="/login">voltar</a>
+    </form>
+</div>
+{{#if verificarEmail}}
+<script>
+    alert('Email já registrado');
+</script>
+{{/if }}

@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: red;
+}
+
+.login {
+    margin-top: 150px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+.messageLogin {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.motos li {
+    display: grid;
+    grid-template-columns: 150px 100px 1fr;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.listUser {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite quebra de linha */
+    gap: 20px;
+    padding: 20px;
+}
+
+.user-card {
+    width: calc(20% - 20px);
+    /* 100% dividido por 5, menos o gap */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+}
+
+.user-card p {
+    margin: 5px 0;
+}
+
+.user-card h4 {
+    margin-top: 15px;
+}
+
+.user-card ul {
+    list-style: disc;
+    margin-left: 20px;
+}

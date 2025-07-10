@@ -1,0 +1,20 @@
+<div class="login">
+    <h1>Faça o Login</h1>
+    <form action="/authlogin" method="post">
+        <div class="mb-3">
+            <label for="nomeusuario" class="form-label">Nome de usuário</label>
+            <input type="text" class="form-control" name="nomeusuario" required>
+        </div>
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" name="senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <a href="/registrar">Registre-se</a>
+    </form>
+</div>
+{{#if erro}}
+<script>
+    alert('login ou senha incorreto')
+</script>
+{{/if}}

@@ -1,0 +1,72 @@
+<table class="table table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Data da Revisão</th>
+            <th scope="col">Status</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Nome da Moto</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody id="table">
+
+        {{#if revisaoAgendada}}
+        <tr class="table-primary">
+            <td colspan="6" class="text-center fw-bold">Revisões Agendadas</td>
+        </tr>
+        {{/if}}
+
+        {{#each revisaoAgendada}}
+        <tr>
+            <td>{{dataFormatada}}</td>
+            <td>{{this.status}}</td>
+            <td>{{this.descricao}}</td>
+            <td>{{this.Moto.nome}}</td>
+            <td>
+                <form action="/revisao/delete/{{this.id}}" method="post">
+                    <input type="submit" value="Cancelar revisão da {{this.Moto.nome}}" class="btn btn-danger">
+                </form>
+            </td>
+            <td></td>
+        </tr>
+        {{/each}}
+
+        {{#if revisaoAndamento}}
+        <tr class="table-warning">
+            <td colspan="6" class="text-center fw-bold">Revisões em Andamento</td>
+        </tr>
+        {{/if}}
+
+        {{#each revisaoAndamento}}
+        <tr>
+            <td>{{dataFormatada}}</td>
+            <td>{{this.status}}</td>
+            <td>{{this.descricao}}</td>
+            <td>{{this.Moto.nome}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{/each}}
+
+        {{#if revisaoConcluido}}
+        <tr class="table-success">
+            <td colspan="6" class="text-center fw-bold">Revisões em Andamento</td>
+        </tr>
+        {{/if}}
+
+        {{#each revisaoConcluido}}
+        <tr>
+            <td>{{dataFormatada}}</td>
+            <td>{{this.status}}</td>
+            <td>{{this.descricao}}</td>
+            <td>{{this.Moto.nome}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<a href="/logado">voltar</a>

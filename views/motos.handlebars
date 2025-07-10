@@ -1,0 +1,23 @@
+<div class="motos">
+    {{#if motos}}
+    <ul class="list-group list-group-flush">
+        {{#each motos}}
+        <li class="list-group-item">{{this.nome}}
+            <form action="/deletemoto/{{this.id}}" method="post">
+                <button type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+            <form action="/revisao/{{this.id}}" method="get">
+                <button type="submit" class="btn btn-primary">Agendar Revisão</button>
+            </form>
+        </li>
+        {{/each}}
+
+        {{else}}
+
+        <p>Ainda não há motos no cadastro</p>
+
+        {{/if}}
+    </ul>
+</div>
+
+<a href="/logado">voltar</a>

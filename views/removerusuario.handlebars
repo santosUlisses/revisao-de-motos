@@ -1,0 +1,27 @@
+<div class="listUser">
+  {{#each userFilter}}
+  <div class="user-card">
+    <p><strong>ID:</strong> {{this.id}}</p>
+    <p><strong>Nome:</strong> {{this.nome}}</p>
+    <p><strong>Nome de usuário:</strong> {{this.nomeusuario}}</p>
+    <p><strong>Email:</strong> {{this.email}}</p>
+
+    <h4>Lista de Motos de {{this.nome}}</h4>
+
+    {{#if this.Motos}}
+    <ul>
+      {{#each this.Motos}}
+      <li>{{this.nome}}</li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p>Nenhuma moto cadastrada.</p>
+    {{/if}}
+
+    <form action="/delete/user/{{this.id}}" method="post">
+      <input type="submit" value="Deletar {{this.nome}}" class="btn btn-danger">
+    </form>
+  </div>
+  {{/each}}
+ 
+</div>

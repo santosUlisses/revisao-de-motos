@@ -1,0 +1,108 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nome do usuário</th>
+            <th scope="col">Nome da Moto</th>
+            <th scope="col">Status</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Data</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody id="table">
+
+        {{#if revisoesAgendada}}
+        <tr class="table-primary">
+            <td colspan="6" class="text-center fw-bold">Revisões Agendadas</td>
+        </tr>
+        {{/if}}
+
+        {{#each revisoesAgendada}}
+        <tr>
+            <td>{{this.User.nome}}</td>
+            <td>{{this.Moto.nome}}</td>
+            <form action="/revisao/edit" method="post">
+                <input type="hidden" value="{{this.id}}" name="id">
+                <td>
+                    <select name="status">
+                        <option value="{{this.status}}">{{this.status}}</option>
+                        <option value="em andamento">em andamento</option>
+                        <option value="concluido">concluído</option>
+                    </select>
+                </td>
+                <td>
+                    <textarea name="descricao">{{this.descricao}}</textarea>
+                </td>
+                <td>{{dataFormatada}}</td>
+                <td>
+                    <input type="submit" value="Enviar" class="btn btn-primary">
+                </td>
+            </form>
+        </tr>
+        {{/each}}
+
+        {{#if revisoesAndamento}}
+        <tr class="table-warning">
+            <td colspan="6" class="text-center fw-bold">Revisões em Andamento</td>
+        </tr>
+        {{/if}}
+
+        {{#each revisoesAndamento}}
+        <tr>
+            <td>{{this.User.nome}}</td>
+            <td>{{this.Moto.nome}}</td>
+            <form action="/revisao/edit" method="post">
+                <input type="hidden" value="{{this.id}}" name="id">
+                <td>
+                    <select name="status">
+                        <option value="{{this.status}}">{{this.status}}</option>
+                        <option value="agendado">agendado</option>
+                        <option value="concluido">concluído</option>
+                    </select>
+                </td>
+                <td>
+                    <textarea name="descricao">{{this.descricao}}</textarea>
+                </td>
+                <td>{{dataFormatada}}</td>
+                <td>
+                    <input type="submit" value="Enviar" class="btn btn-primary">
+                </td>
+            </form>
+        </tr>
+        {{/each}}
+
+        {{#if revisoesConcluido}}
+        <tr class="table-success">
+            <td colspan="6" class="text-center fw-bold">Revisões Concluídas</td>
+        </tr>
+        {{/if}}
+
+        {{#each revisoesConcluido}}
+        <tr>
+            <td>{{this.User.nome}}</td>
+            <td>{{this.Moto.nome}}</td>
+            <form action="/revisao/edit" method="post">
+                <input type="hidden" value="{{this.id}}" name="id">
+                <td>
+                    <select name="status">
+                        <option value="{{this.status}}">{{this.status}}</option>
+                        <option value="em andamento">em andamento</option>
+                        <option value="agendado">agendado</option>
+                    </select>
+                </td>
+                <td>
+                    <textarea name="descricao">{{this.descricao}}</textarea>
+                </td>
+                <td>{{dataFormatada}}</td>
+                <td>
+                    <input type="submit" value="Enviar" class="btn btn-primary">
+                </td>
+            </form>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>
+
+
+<a href="/paineladm">Voltar</a>
