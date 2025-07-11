@@ -23,7 +23,7 @@ Painel administrador : <br><br>
 
 <img width="1919" height="907" alt="revisoes adm" src="https://github.com/user-attachments/assets/8f90c79b-e06e-4c13-9ea9-9ed956ba482d" />
 
-<img width="1916" height="907" alt="lista usuarios" src="https://github.com/user-attachments/assets/e4d9a928-9eac-4a86-99a7-646f0ded46d3" />
+<img width="1916" height="907" alt="lista usuarios" src="https://github.com/user-attachments/assets/e4d9a928-9eac-4a86-99a7-646f0ded46d3" /><br><br>
 
 Painel de usuário : <br><br>
 
